@@ -86,7 +86,7 @@ function orderSummaryHtml(order) {
 
       ${section('Story / Life Notes',
         row('Life notes / career notes', inp.lifeNotes) +
-        row('Story file uploaded', inp.storyUpload ? `<a href="${inp.storyUpload.publicUrl}" style="color:#F05A40">${inp.storyUpload.originalName || inp.storyUpload.fileName || 'file'}</a>` : null
+        row('Story file uploaded', inp.storyUpload ? `<a href="${inp.storyUpload.publicUrl}" style="color:#F05A40">${inp.storyUpload.originalName || inp.storyUpload.fileName || 'file'}</a>` : null)
       )}
 
       ${section('Order Details',

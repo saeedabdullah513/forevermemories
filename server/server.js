@@ -212,7 +212,12 @@ app.post('/api/orders', async (req, res, next) => {
     order.totalCents = Math.max(0, order.subtotalCents - order.discountCents);
     order.aiCover = await generateCoverArtBrief({ input, toc: order.toc, coverSettings, coverVariant: order.coverVariant });
     await generateProductionFiles(order);
-    order.notification = await sendOrderNotification(order);
+    try {
+      order.notification = await sendOrderNotification(order);
+    } catch (emailErr) {
+      console.error('[email] Failed to send order notification:', emailErr.message);
+      order.notification = { sent: false, error: emailErr.message };
+    }
     updateOrder(order);
     res.json({ order });
   } catch (error) { next(error); }

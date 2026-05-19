@@ -1566,7 +1566,9 @@ pre {
 }
 
 @media (max-width: 640px) {
-  .topbar { padding: 0 5vw; height: 62px; }
+  .topbar { padding: 0 5vw; height: 56px; }
+  .brand-logo { height: 26px; }
+  .brand span { font-size: 13px; }
   .builder-card { padding: 24px; }
   .builder-shell { padding: 36px 5vw; }
   .steps-panel { padding: 52px 5vw; }

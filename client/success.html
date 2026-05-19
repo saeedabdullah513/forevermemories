@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Created | Book As A Gift</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">B</span>
+      <span>Book As A Gift</span>
+    </a>
+    <nav>
+      <a href="/" class="nav-cta">&#8592; Create another book</a>
+    </nav>
+  </header>
+
+  <main class="success-page">
+    <div class="success-card">
+      <div class="success-icon">&#10003;</div>
+      <span class="eyebrow">Order confirmed</span>
+      <h1>Your local test order was created.</h1>
+      <p>This confirms the flow works locally. In production, the next step is to generate full manuscript PDFs, process the Stripe payment, and submit the print job to Lulu.</p>
+      <a class="button primary" href="/" style="margin:0 auto;">Create another book</a>
+      <pre id="orderBox"></pre>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark">B</span>
+          <span>Book As A Gift</span>
+        </a>
+        <p>Personalized printed books crafted from real stories.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="/">Builder</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Book As A Gift. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const id = new URLSearchParams(location.search).get('order');
+    if (id) {
+      fetch('/api/orders/' + id)
+        .then(r => r.json())
+        .then(d => { document.getElementById('orderBox').textContent = JSON.stringify(d.order, null, 2); });
+    }
+  </script>
+</body>
+</html>

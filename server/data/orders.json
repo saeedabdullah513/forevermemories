@@ -1,0 +1,280 @@
+[
+  {
+    "id": "a2d77f6b-58cd-4670-91ff-459554c57869",
+    "status": "MOCK_PAID",
+    "createdAt": "2026-05-19T13:53:17.843Z",
+    "input": {
+      "genre": "memoir",
+      "recipientName": "Hassan",
+      "relationship": "friend",
+      "occasion": "Anniversary",
+      "tone": "funny",
+      "customTitle": "Hassan: The Anniversary Life",
+      "customSubtitle": "A custom life story memoir created as a anniversary",
+      "coverTheme": "soft-keepsake",
+      "coverSettings": {
+        "paletteMode": "auto",
+        "primaryColor": "#f8d7da",
+        "secondaryColor": "#fff1e6",
+        "accentColor": "#5c4b51",
+        "photoScale": 1,
+        "photoX": 50,
+        "photoY": 38,
+        "titleX": 50,
+        "titleY": 70,
+        "titleAlign": "center",
+        "artDensity": 55,
+        "aiMode": "local-vector"
+      },
+      "lifeNotes": "",
+      "recipientPhoto": {
+        "fileName": "580cddfd-3ced-4329-badd-d137f2af7d31-recipient-photo.jpg",
+        "publicUrl": "/uploads/580cddfd-3ced-4329-badd-d137f2af7d31-recipient-photo.jpg",
+        "originalName": "WIN_20260315_17_51_00_Pro.jpg",
+        "mimetype": "image/jpeg",
+        "faceCheck": {
+          "accepted": true,
+          "provider": "local-dev-safe",
+          "faces": null,
+          "needsProductionValidation": true,
+          "message": "Photo accepted for local testing. Strict face validation should be enabled with AWS Rekognition before launch."
+        }
+      },
+      "storyUpload": {
+        "fileName": "895e4fc7-397c-40e2-956f-9975f427b5f8-story-upload.docx",
+        "publicUrl": "/uploads/895e4fc7-397c-40e2-956f-9975f427b5f8-story-upload.docx",
+        "originalName": "NPR-Physical Therapy App-Web Content-January-V1.docx",
+        "mimetype": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "extractedText": ""
+      },
+      "answers": [
+        "Kind, courteous, and friendly",
+        "A trip to cow mandi",
+        "chasing dream of becoming an entreprenuer ",
+        "germany"
+      ]
+    },
+    "toc": {
+      "title": "Hassan: The Anniversary Life",
+      "subtitle": "A custom life story memoir created as a anniversary",
+      "estimatedPages": 160,
+      "genre": "Life Story Memoir",
+      "titleInputs": {
+        "trait": "Kind",
+        "secondTrait": "Courteous",
+        "memoryPhrase": "Trip Cow Mandi",
+        "themePhrase": "Chasing Dream Becoming",
+        "placePhrase": "Germany",
+        "occasionPhrase": "Anniversary",
+        "relationship": ""
+      },
+      "structureNote": "18 chapters at roughly 8 to 10 pages each, sized for a 6 x 9 printed gift book. The title is generated from the selected genre, recipient name, relationship, occasion, tone, and personal answers.",
+      "chapters": [
+        {
+          "chapter": 1,
+          "title": "Small Details That Matter: Origin",
+          "pages": "1-8",
+          "summary": "This chapter turns kind, courteous, and friendly into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 2,
+          "title": "The First Real Test: Turning Point",
+          "pages": "9-16",
+          "summary": "This chapter turns a trip to cow mandi into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 3,
+          "title": "A Memory That Changes Everything: Challenge",
+          "pages": "17-24",
+          "summary": "This chapter turns chasing dream of becoming an entreprenuer into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 4,
+          "title": "People Who Shaped the Journey: Growth",
+          "pages": "25-32",
+          "summary": "This chapter turns germany into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 5,
+          "title": "The Problem That Would Not Go Away: Legacy",
+          "pages": "33-40",
+          "summary": "This chapter turns kind, courteous, and friendly into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 6,
+          "title": "A Choice Made Under Pressure: Origin",
+          "pages": "41-48",
+          "summary": "This chapter turns a trip to cow mandi into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 7,
+          "title": "The Hidden Strength Within: Turning Point",
+          "pages": "49-56",
+          "summary": "This chapter turns chasing dream of becoming an entreprenuer into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 8,
+          "title": "A Season of Change: Challenge",
+          "pages": "57-64",
+          "summary": "This chapter turns germany into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 9,
+          "title": "Lessons Learned the Hard Way: Growth",
+          "pages": "65-72",
+          "summary": "This chapter turns kind, courteous, and friendly into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 10,
+          "title": "The Moment Things Became Clear: Legacy",
+          "pages": "73-80",
+          "summary": "This chapter turns a trip to cow mandi into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 11,
+          "title": "A Gift Only They Could Give: Origin",
+          "pages": "81-88",
+          "summary": "This chapter turns chasing dream of becoming an entreprenuer into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 12,
+          "title": "The Road Back to Hope: Turning Point",
+          "pages": "89-96",
+          "summary": "This chapter turns germany into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 13,
+          "title": "What the Story Leaves Behind: Challenge",
+          "pages": "97-104",
+          "summary": "This chapter turns kind, courteous, and friendly into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 14,
+          "title": "A Future Worth Celebrating: Growth",
+          "pages": "105-112",
+          "summary": "This chapter turns a trip to cow mandi into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 15,
+          "title": "The Final Page, Still Unwritten: Legacy",
+          "pages": "113-120",
+          "summary": "This chapter turns chasing dream of becoming an entreprenuer into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 16,
+          "title": "The Beginning No One Expected: Origin",
+          "pages": "121-128",
+          "summary": "This chapter turns germany into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 17,
+          "title": "A Name That Carries a Story: Turning Point",
+          "pages": "129-136",
+          "summary": "This chapter turns kind, courteous, and friendly into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        },
+        {
+          "chapter": 18,
+          "title": "The World Around the Main Character: Challenge",
+          "pages": "137-160",
+          "summary": "This chapter turns a trip to cow mandi into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a friend and connects the story to the Anniversary."
+        }
+      ]
+    },
+    "tocRegenerationCount": 2,
+    "coverRegenerationCount": 2,
+    "coverVariant": 2,
+    "coverTheme": "soft-keepsake",
+    "coverSettings": {
+      "paletteMode": "auto",
+      "primaryColor": "#f8d7da",
+      "secondaryColor": "#fff1e6",
+      "accentColor": "#5c4b51",
+      "photoScale": 1,
+      "photoX": 50,
+      "photoY": 38,
+      "titleX": 50,
+      "titleY": 70,
+      "titleAlign": "center",
+      "artDensity": 55,
+      "aiMode": "local-vector"
+    },
+    "product": {
+      "binding": "paperback",
+      "label": "Paperback",
+      "description": "Custom 6 x 9 paperback gift book",
+      "priceCents": 6900,
+      "podPackageId": "0600X0900.BW.STD.PB.060UW444.MXX",
+      "quantity": 1,
+      "shippingLevel": "MAIL"
+    },
+    "customer": {
+      "email": ""
+    },
+    "shippingAddress": {
+      "name": "Hassan",
+      "street1": "123 Test Street",
+      "city": "Austin",
+      "state_code": "TX",
+      "postcode": "78701",
+      "country_code": "US",
+      "phone_number": "+15551234567",
+      "email": "customer@example.com"
+    },
+    "discountCode": "",
+    "subtotalCents": 6900,
+    "futurePreferences": {
+      "wantsPromotion": true,
+      "wantsGhostwriting": true,
+      "wantsPublishing": true
+    },
+    "termsAccepted": true,
+    "pageCount": 160,
+    "discountCents": 0,
+    "totalCents": 6900,
+    "aiCover": {
+      "provider": "mock",
+      "enabled": false,
+      "prompt": "Create abstract book-cover background art for a personalized printed gift book.\nTitle: \"Hassan: The Anniversary Life\". Subtitle: \"A custom life story memoir created as a anniversary\".\nRecipient inspiration: Hassan. Genre: memoir. Tone: funny.\nPersonal details to reflect abstractly: Kind, courteous, and friendly | A trip to cow mandi | chasing dream of becoming an entreprenuer | germany.\nUse rich, tasteful, commercial book-cover graphics. Avoid text inside the image because the app places title text separately.\nCreate artwork suitable for both front and back cover. Include abstract shapes and symbolic motifs, not a literal full cover layout.\nUse a genre-appropriate pastel-to-premium color palette.\nVariation number: 2.",
+      "message": "Local vector cover art was used. Add an AI_COVER_PROVIDER and API key later to generate image assets."
+    },
+    "luluCoverDimensions": {
+      "mock": true,
+      "message": "Lulu credentials are not configured. This is a local mock response.",
+      "payload": {
+        "pod_package_id": "0600X0900.BW.STD.PB.060UW444.MXX",
+        "page_count": 160,
+        "unit": "PT"
+      }
+    },
+    "files": {
+      "interiorUrl": "http://localhost:4242/uploads/a2d77f6b-58cd-4670-91ff-459554c57869-interior.pdf",
+      "coverUrl": "http://localhost:4242/uploads/a2d77f6b-58cd-4670-91ff-459554c57869-cover-v2.pdf",
+      "coverPreviewUrl": "/uploads/a2d77f6b-58cd-4670-91ff-459554c57869-cover-v2.pdf",
+      "recipientPhotoUrl": "/uploads/580cddfd-3ced-4329-badd-d137f2af7d31-recipient-photo.jpg"
+    },
+    "coverSpecs": {
+      "source": "local-fallback",
+      "unit": "PT",
+      "trimWidthIn": 6,
+      "trimHeightIn": 9,
+      "bleedIn": 0.125,
+      "wrapIn": 0,
+      "spineWidthIn": 0.36036036036036034,
+      "width": 907.9459459459459,
+      "height": 666,
+      "frontX": 466.94594594594594,
+      "backX": 9,
+      "spineX": 441,
+      "panelY": 9,
+      "panelWidth": 432,
+      "panelHeight": 648,
+      "spineWidth": 25.945945945945944
+    },
+    "notification": {
+      "sent": false,
+      "savedLocally": true,
+      "message": "SMTP is not configured, so the notification was saved locally in server/data/notifications.json."
+    },
+    "paidAt": "2026-05-19T13:53:17.992Z"
+  }
+]

@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forever Memories | Personalized Book Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">F</span>
+      <span>Forever Memories</span>
+    </a>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#builder">Create</a>
+      <a href="#life-upload">Upload Story</a>
+      <a href="/admin.html" class="nav-cta">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Personalized printed books</span>
+        <h1>Turn someone's story into a gift they can <em>hold.</em></h1>
+        <p>Choose a genre, add the recipient's photo, answer meaningful questions, preview a custom table of contents, and prepare a 160-page gift book for print fulfillment.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#builder">Start creating</a>
+          <a class="button secondary" href="#how" style="background:rgba(255,255,255,0.08);color:#ffffff;border:1px solid rgba(255,255,255,0.18);">See the flow</a>
+        </div>
+        <div class="trust-row">
+          <span>Photo-based cover</span>
+          <span>Paperback &amp; hardcover</span>
+          <span>Lulu + Stripe ready</span>
+        </div>
+      </div>
+      <div class="book-stage" aria-hidden="true">
+        <div class="floating-card card-one">18 custom chapters</div>
+        <div class="floating-card card-two">160 pages</div>
+        <div class="book-cover" id="heroCover">
+          <div class="cover-photo-wrap"><img id="heroCoverImage" alt="Recipient cover preview" /></div>
+          <span>Forever Memories</span>
+          <h2 id="coverTitle">A Story Made Just for Them</h2>
+          <p id="coverSubtitle">Custom keepsake edition</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ── -->
+    <section id="how" class="steps-panel">
+      <div class="section-heading">
+        <span class="eyebrow">The product flow</span>
+        <h2>More immersive than a basic form.</h2>
+        <p>The user moves through a guided story-building journey before checkout, with controlled regeneration and a final printable cover preview.</p>
+      </div>
+      <div class="steps-grid">
+        <article>
+          <b>01</b>
+          <h3>Choose the genre</h3>
+          <p>Memoir, romance, adventure, fantasy, comedy, or leadership — set the tone from the start.</p>
+        </article>
+        <article>
+          <b>02</b>
+          <h3>Add the recipient</h3>
+          <p>Name, occasion, relationship, tone, and a cover photo for a truly personal result.</p>
+        </article>
+        <article>
+          <b>03</b>
+          <h3>Generate the TOC</h3>
+          <p>A custom 18-chapter structure designed for roughly 160 printed pages.</p>
+        </article>
+        <article>
+          <b>04</b>
+          <h3>Select print format</h3>
+          <p>Choose paperback or hardcover, apply discounts, and complete checkout.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── BUILDER ── -->
+    <section id="builder" class="builder-shell">
+
+      <!-- Sidebar -->
+      <aside class="progress-card">
+        <span class="eyebrow">Builder</span>
+        <h2>Your gift book</h2>
+        <p>Complete each step. The cover preview and table of contents update as you add details.</p>
+        <ol id="progressList">
+          <li class="active">Genre</li>
+          <li>Recipient</li>
+          <li>Cover Photo</li>
+          <li>Story Questions</li>
+          <li>Story / Resume Upload</li>
+          <li>Preview TOC</li>
+          <li>Edit Title &amp; TOC</li>
+          <li>Final Cover</li>
+          <li>Format &amp; Checkout</li>
+        </ol>
+      </aside>
+
+      <!-- Main Card -->
+      <div class="builder-card">
+        <form id="bookForm">
+
+          <!-- Step 0 — Genre -->
+          <div class="form-step active" data-step="0">
+            <span class="eyebrow">Step 1</span>
+            <h2>What kind of book should this feel like?</h2>
+            <div class="genre-grid">
+              <label><input type="radio" name="genre" value="memoir" checked><span><b>Life Story Memoir</b><small>Warm, meaningful, reflective</small></span></label>
+              <label><input type="radio" name="genre" value="romance"><span><b>Romance</b><small>Heartfelt and intimate</small></span></label>
+              <label><input type="radio" name="genre" value="adventure"><span><b>Adventure</b><small>Bold and exciting</small></span></label>
+              <label><input type="radio" name="genre" value="fantasy"><span><b>Fantasy</b><small>Magical and immersive</small></span></label>
+              <label><input type="radio" name="genre" value="comedy"><span><b>Comedy</b><small>Funny and affectionate</small></span></label>
+              <label><input type="radio" name="genre" value="leadership"><span><b>Leadership</b><small>Inspirational and polished</small></span></label>
+            </div>
+          </div>
+
+          <!-- Step 1 — Recipient -->
+          <div class="form-step" data-step="1">
+            <span class="eyebrow">Step 2</span>
+            <h2>Who is the book for?</h2>
+            <div class="field-grid">
+              <label>Recipient name<input required name="recipientName" placeholder="e.g., Sarah" /></label>
+              <label>Your relationship<input name="relationship" placeholder="e.g., sister, father, friend" /></label>
+              <label>Occasion<input name="occasion" placeholder="e.g., birthday, anniversary" /></label>
+              <label>Tone
+                <select name="tone">
+                  <option>heartwarming</option>
+                  <option>funny</option>
+                  <option>luxury</option>
+                  <option>emotional</option>
+                  <option>inspiring</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2 — Cover Photo -->
+          <div class="form-step" data-step="2">
+            <span class="eyebrow">Step 3</span>
+            <h2>Upload a photo for the automatic cover.</h2>
+            <p class="helper-text">Upload a clear photo of the intended recipient. Local testing accepts the photo for preview even if browser face detection is unreliable. Production mode can strictly enforce one human face with AWS Rekognition.</p>
+            <div class="cover-builder-grid">
+              <label class="upload-zone" for="recipientPhoto">
+                <input id="recipientPhoto" name="recipientPhoto" type="file" accept="image/png,image/jpeg,image/webp" />
+                <span class="upload-icon">+</span>
+                <b>Upload recipient photo</b>
+                <small>PNG, JPG, or WebP. Use a clear portrait for the best result.</small>
+              </label>
+              <div class="live-cover-panel">
+                <div class="mini-book-cover" id="miniCover">
+                  <div class="mini-photo"><img id="coverImagePreview" alt="Uploaded recipient preview" /></div>
+                  <span>Forever Memories</span>
+                  <h3 id="miniCoverTitle">A Story Made Just for Them</h3>
+                  <p id="miniCoverSubtitle">Custom keepsake edition</p>
+                </div>
+                <div id="uploadStatus" class="status"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 — Story Questions -->
+          <div class="form-step" data-step="3">
+            <span class="eyebrow">Step 4</span>
+            <h2>Add details that make the book personal.</h2>
+            <div class="question-stack">
+              <label>What are three words that describe them?<textarea name="answer1" placeholder="Kind, ambitious, hilarious..."></textarea></label>
+              <label>What is one memory that should inspire the book?<textarea name="answer2" placeholder="A trip, a family story, a funny moment..."></textarea></label>
+              <label>What challenge, dream, or theme should appear in the story?<textarea name="answer3" placeholder="Starting over, finding confidence, chasing adventure..."></textarea></label>
+              <label>Are there any names, places, or inside jokes to include?<textarea name="answer4" placeholder="Keep it tasteful and gift-friendly."></textarea></label>
+            </div>
+          </div>
+
+          <!-- Step 4 — Story Upload -->
+          <div class="form-step" data-step="4" id="life-upload">
+            <span class="eyebrow">Step 5</span>
+            <h2>Upload a story, resume, or life notes.</h2>
+            <p class="helper-text">This optional path helps the system create a table of contents from the client's life, career, achievements, expertise, or personal journey. TXT and PDF/DOC/DOCX files are accepted locally, while TXT files can be read directly in this MVP.</p>
+            <div class="cover-builder-grid">
+              <label class="upload-zone" for="storyFile">
+                <input id="storyFile" name="storyFile" type="file" accept=".txt,.md,.pdf,.doc,.docx,application/pdf,text/plain" />
+                <span class="upload-icon">&#8593;</span>
+                <b>Upload story or resume</b>
+                <small>TXT works best for local TOC generation. PDF/DOC files are stored with the order for review.</small>
+              </label>
+              <div>
+                <label style="display:grid;gap:7px;font-weight:600;font-size:13px;color:var(--text);font-family:'Inter',sans-serif;">
+                  Or paste life / career notes here
+                  <textarea name="lifeNotes" id="lifeNotes" placeholder="Paste biography, resume points, career highlights, stories, achievements, or expertise..."></textarea>
+                </label>
+                <div id="storyUploadStatus" class="status"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 — Generate TOC -->
+          <div class="form-step" data-step="5">
+            <span class="eyebrow">Step 6</span>
+            <h2>Preview the custom book plan.</h2>
+            <div class="field-grid">
+              <label>Preferred book title<input name="customTitle" id="customTitle" placeholder="Leave blank to let the system create one" /></label>
+              <label>Preferred subtitle<input name="customSubtitle" id="customSubtitle" placeholder="Optional subtitle" /></label>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
+              <button class="button primary" id="generateBtn" type="button">Generate table of contents</button>
+              <button class="button secondary" id="regenerateTocBtn" type="button">Regenerate TOC</button>
+            </div>
+            <div id="tocStatus" class="status">You can generate or regenerate the table of contents up to 3 times.</div>
+            <div id="preview" class="toc-preview"></div>
+          </div>
+
+          <!-- Step 6 — Edit TOC -->
+          <div class="form-step" data-step="6">
+            <span class="eyebrow">Step 7</span>
+            <h2>Edit the title and table of contents.</h2>
+            <p class="helper-text">Keep the generated version, choose your own title, or edit chapter titles and descriptions before the final cover and order are created.</p>
+            <div class="field-grid">
+              <label>Final book title<input id="editableTitle" placeholder="Generate the TOC first" /></label>
+              <label>Final subtitle<input id="editableSubtitle" placeholder="Optional subtitle" /></label>
+            </div>
+            <div id="tocEditor" class="toc-preview"></div>
+            <button class="button secondary" id="saveTocEditsBtn" type="button" style="margin-top:16px;">Save title and TOC edits</button>
+            <div id="tocEditStatus" class="status"></div>
+          </div>
+
+          <!-- Step 7 — Final Cover -->
+          <div class="form-step" data-step="7">
+            <span class="eyebrow">Step 8</span>
+            <h2>View, customize, and regenerate the final cover.</h2>
+            <p class="helper-text">The cover changes based on the selected title, genre, story answers, theme, colors, and layout controls. The back cover includes abstract art connected to the book details.</p>
+            <div class="cover-editor-panel">
+              <div class="cover-control-grid">
+                <label>Preferred cover theme
+                  <select name="coverTheme" id="coverTheme" class="cover-control">
+                    <option value="soft-keepsake">Soft keepsake</option>
+                    <option value="cinematic">Cinematic</option>
+                    <option value="modern-editorial">Modern editorial</option>
+                    <option value="whimsical">Whimsical</option>
+                    <option value="luxury">Luxury</option>
+                  </select>
+                </label>
+                <label>Color mode
+                  <select name="coverPaletteMode" class="cover-control">
+                    <option value="auto">Auto from genre</option>
+                    <option value="manual">Use my colors</option>
+                  </select>
+                </label>
+                <label>AI cover mode
+                  <select name="aiCoverMode" class="cover-control">
+                    <option value="local-vector">Local vector art (testing)</option>
+                    <option value="ai-brief-ready">AI prompt/brief (production)</option>
+                  </select>
+                </label>
+                <label>Title alignment
+                  <select name="coverTitleAlign" class="cover-control">
+                    <option value="center">Center</option>
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="color-chip-grid">
+                <label>Primary color<input type="color" name="coverPrimaryColor" value="#F8D7DA" class="cover-control" /></label>
+                <label>Secondary color<input type="color" name="coverSecondaryColor" value="#FFF1E6" class="cover-control" /></label>
+                <label>Accent color<input type="color" name="coverAccentColor" value="#5C4B51" class="cover-control" /></label>
+              </div>
+
+              <div class="cover-control-grid slider-grid">
+                <label class="range-row">Image size <span id="photoScaleValue">100%</span><input type="range" min="65" max="145" value="100" name="coverPhotoScale" class="cover-control" /></label>
+                <label class="range-row">Image left / right <span id="photoXValue">50</span><input type="range" min="18" max="82" value="50" name="coverPhotoX" class="cover-control" /></label>
+                <label class="range-row">Image up / down <span id="photoYValue">38</span><input type="range" min="18" max="70" value="38" name="coverPhotoY" class="cover-control" /></label>
+                <label class="range-row">Title left / right <span id="titleXValue">50</span><input type="range" min="18" max="82" value="50" name="coverTitleX" class="cover-control" /></label>
+                <label class="range-row">Title up / down <span id="titleYValue">70</span><input type="range" min="20" max="86" value="70" name="coverTitleY" class="cover-control" /></label>
+                <label class="range-row">Abstract art amount <span id="artDensityValue">55</span><input type="range" min="15" max="95" value="55" name="coverArtDensity" class="cover-control" /></label>
+              </div>
+            </div>
+
+            <div class="cover-preview-actions">
+              <button class="button primary" id="regenerateCoverBtn" type="button">Regenerate cover</button>
+              <span class="status" id="coverStatus">Upload a photo and generate the TOC first.</span>
+            </div>
+            <iframe id="finalCoverFrame" class="final-cover-frame" title="Final cover preview"></iframe>
+          </div>
+
+          <!-- Step 8 — Checkout -->
+          <div class="form-step" data-step="8">
+            <span class="eyebrow">Step 9</span>
+            <h2>Choose format and checkout.</h2>
+            <div class="checkout-grid">
+              <div>
+                <div class="format-grid">
+                  <label class="format-card">
+                    <input type="radio" name="binding" value="paperback" checked>
+                    <span><b>Paperback</b><small>Gift-ready 6 &times; 9 paperback edition</small><strong>$69.00</strong></span>
+                  </label>
+                  <label class="format-card">
+                    <input type="radio" name="binding" value="hardcover">
+                    <span><b>Hardcover</b><small>Premium 6 &times; 9 casewrap keepsake edition</small><strong>$89.00</strong></span>
+                  </label>
+                </div>
+                <div class="field-grid checkout-fields">
+                  <label>Email<input name="email" type="email" placeholder="customer@example.com" /></label>
+                  <label>Full name<input name="shipName" placeholder="Shipping recipient" /></label>
+                  <label>Phone<input name="phone" placeholder="+15551234567" /></label>
+                  <label>Street<input name="street1" placeholder="123 Main St" /></label>
+                  <label>City<input name="city" placeholder="Austin" /></label>
+                  <label>State<input name="state" placeholder="TX" /></label>
+                  <label>Postcode<input name="postcode" placeholder="78701" /></label>
+                  <label>Country code<input name="country" placeholder="US" value="US" /></label>
+                </div>
+                <div class="preference-box">
+                  <h3>Future book support</h3>
+                  <label class="check-row"><input type="checkbox" name="futurePromote" value="yes" /> I may want to promote this book in the future.</label>
+                  <label class="check-row"><input type="checkbox" name="futureGhostwrite" value="yes" /> I may want another book ghostwritten in the future.</label>
+                  <label class="check-row"><input type="checkbox" name="futurePublish" value="yes" /> I may want publishing support in the future.</label>
+                </div>
+              </div>
+
+              <div class="checkout-summary">
+                <h3>Order summary</h3>
+                <p id="selectedProductText">Custom 6 &times; 9 paperback gift book</p>
+                <div class="price-row"><span>Subtotal</span><b id="subtotal">$69.00</b></div>
+                <div class="discount-box">
+                  <input id="discountCode" placeholder="Discount code" />
+                  <button id="applyDiscount" class="button secondary" type="button">Apply</button>
+                </div>
+                <div id="discountMessage" class="status"></div>
+                <div class="price-row total"><span>Total</span><b id="total">$69.00</b></div>
+                <label class="check-row terms-row">
+                  <input type="checkbox" id="termsAccepted" name="termsAccepted" />
+                  I have read and agree to the <a href="/terms.html" target="_blank">Terms</a> and <a href="/privacy.html" target="_blank">Privacy Policy</a>.
+                </label>
+                <button class="button primary full" id="checkoutBtn" type="button">Create order &amp; checkout</button>
+                <button class="button full" id="luluBtn" type="button" style="background:rgba(255,255,255,0.07);color:rgba(240,236,216,0.7);border:1px solid rgba(255,255,255,0.12);margin-top:10px;">Create Lulu test print job</button>
+                <div id="checkoutStatus" class="status"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Navigation -->
+          <div class="form-nav">
+            <button class="button secondary" id="backBtn" type="button">&#8592; Back</button>
+            <button class="button primary" id="nextBtn" type="button">Next &#8594;</button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark">F</span>
+          <span>Forever Memories</span>
+        </a>
+        <p>Personalized printed books crafted from real stories. A premium gift that goes beyond ordinary.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#builder">Create a book</a>
+        <a href="#how">How it works</a>
+        <a href="#life-upload">Upload story</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/terms.html">Terms &amp; Conditions</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/admin.html">Admin portal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Forever Memories. All rights reserved.</span>
+      <span>Powered by Canvas Digital</span>
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

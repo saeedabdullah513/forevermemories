@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book As A Gift | Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">B</span>
+      <span>Book As A Gift</span>
+    </a>
+    <nav>
+      <a href="/">Builder</a>
+      <a href="#" class="nav-cta">Admin panel</a>
+    </nav>
+  </header>
+
+  <main class="admin-shell">
+
+    <span class="eyebrow">Admin portal</span>
+    <h1>Orders, stats &amp; discount codes</h1>
+
+    <!-- ── LOGIN CARD ── -->
+    <section class="admin-card admin-login-card" id="loginCard" style="margin-top:28px;">
+      <h2>Admin login</h2>
+      <p class="helper-text">Default local login is <strong>admin</strong> / <strong>admin</strong>. Change credentials from this panel before hosting in production.</p>
+      <div class="admin-toolbar">
+        <label>Username<input id="adminUsername" value="admin" autocomplete="username" /></label>
+        <label>Password<input id="adminPassword" type="password" value="admin" autocomplete="current-password" /></label>
+        <button class="button primary" id="adminLogin" type="button">Login</button>
+      </div>
+      <div id="loginMessage" class="status"></div>
+    </section>
+
+    <!-- ── DASHBOARD ── -->
+    <section id="adminDashboard" class="hidden">
+
+      <!-- Toolbar -->
+      <div class="admin-toolbar" style="margin-top:28px;">
+        <button class="button secondary" id="refreshAdmin" type="button">&#8635; Refresh data</button>
+        <button class="button secondary" id="adminLogout" type="button">Logout</button>
+      </div>
+      <div id="adminMessage" class="status"></div>
+
+      <!-- Stats Grid -->
+      <div class="admin-grid" id="statsGrid"></div>
+
+      <!-- Change Credentials -->
+      <section class="admin-card" style="margin-top:8px;">
+        <h2>Change admin login</h2>
+        <p class="helper-text">Replace the default username and password. For production, also set a strong <code>ADMIN_SESSION_SECRET</code> in <code>.env</code>.</p>
+        <div class="admin-toolbar">
+          <label>New username<input id="newAdminUsername" placeholder="New admin username" /></label>
+          <label>New password<input id="newAdminPassword" type="password" placeholder="At least 6 characters" /></label>
+          <button class="button secondary" id="changeCredentials" type="button">Update login</button>
+        </div>
+        <div id="settingsMessage" class="status"></div>
+      </section>
+
+      <!-- Discount Codes -->
+      <section class="admin-card" style="margin-top:20px;">
+        <h2>Discount codes</h2>
+        <div class="admin-toolbar">
+          <label>Code<input id="discountCodeInput" placeholder="VIP100" /></label>
+          <label>Type<select id="discountType"><option value="percent">Percent (%)</option><option value="fixed">Fixed (cents)</option></select></label>
+          <label>Value<input id="discountValue" type="number" placeholder="100" /></label>
+          <label>Max uses<input id="discountMax" type="number" placeholder="Optional" /></label>
+          <button class="button primary" id="createDiscount" type="button">Add code</button>
+        </div>
+        <div id="discountAdminMessage" class="status"></div>
+        <table class="admin-table" style="margin-top:12px;">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Type</th>
+              <th>Value</th>
+              <th>Used</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="discountRows"></tbody>
+        </table>
+      </section>
+
+      <!-- Order History -->
+      <section class="admin-card" style="margin-top:20px;margin-bottom:40px;">
+        <h2>Order history</h2>
+        <table class="admin-table" style="margin-top:12px;">
+          <thead>
+            <tr>
+              <th>Created</th>
+              <th>Title</th>
+              <th>Customer</th>
+              <th>Format</th>
+              <th>Total</th>
+              <th>Future interest</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="orderRows"></tbody>
+        </table>
+      </section>
+
+    </section>
+  </main>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark">F</span>
+          <span>Forever Memories</span>
+        </a>
+        <p>Personalized printed books crafted from real stories.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="/">Builder</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Forever Memories. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

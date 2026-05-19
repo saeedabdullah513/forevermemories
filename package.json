@@ -1,0 +1,27 @@
+{
+  "name": "book-as-a-gift-production",
+  "version": "2.2.0",
+  "description": "Production-style local build for Book As A Gift with editable title/TOC, story uploads, admin panel, email notifications, discounts, Lulu sandbox, Stripe checkout, and cover generation.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "seed": "node server/seed.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-rekognition": "^3.699.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "multer": "^2.0.2",
+    "nodemailer": "^8.0.7",
+    "pdfkit": "^0.15.2",
+    "stripe": "^17.5.0",
+    "uuid": "^11.0.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

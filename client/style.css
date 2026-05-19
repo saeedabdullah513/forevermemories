@@ -374,6 +374,10 @@ button:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important
 .cover-photo-wrap img { display: none; width: 100%; height: 100%; object-fit: cover; }
 .cover-photo-wrap.has-image img { display: block; }
 
+/* Hero cover — taller area, contain so book text stays sharp */
+#heroCoverWrap { height: 240px; background: transparent; border: none; }
+#heroCoverWrap img { object-fit: contain; }
+
 .floating-card {
   position: absolute;
   border-radius: var(--radius);
@@ -1187,6 +1191,27 @@ textarea {
 .success-card h1 { font-size: clamp(24px,4vw,38px); color: var(--text); margin-bottom: 14px; }
 .success-card > p { color: var(--text-muted); font-size: 15px; line-height: 1.75; max-width: 540px; margin: 0 auto 28px; }
 
+.success-details {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 0 0 24px;
+}
+
+.success-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.success-row:last-child { border-bottom: none; }
+.success-row span { color: var(--text-muted); }
+.success-row b { color: var(--text); font-weight: 600; }
+
 pre {
   background: #111111;
   color: rgba(255,255,255,0.72);
@@ -1372,6 +1397,30 @@ pre {
   max-width: 290px;
 }
 
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.social-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
+  transition: background var(--t) var(--ease), color var(--t) var(--ease), border-color var(--t) var(--ease);
+}
+
+.social-icon:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: var(--white);
+}
+
 .footer-col h4 {
   color: var(--coral);
   font-size: 11px;
@@ -1498,6 +1547,7 @@ pre {
 
   .book-stage { min-height: 380px; order: -1; }
   .book-cover { height: 390px; }
+  .floating-card { display: none; }
 
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 6px; }

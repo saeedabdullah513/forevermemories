@@ -276,5 +276,282 @@
       "message": "SMTP is not configured, so the notification was saved locally in server/data/notifications.json."
     },
     "paidAt": "2026-05-19T13:53:17.992Z"
+  },
+  {
+    "id": "f30133fe-f9e9-4508-b4e3-0dfd65d85319",
+    "status": "MOCK_PAID",
+    "createdAt": "2026-05-19T18:26:05.504Z",
+    "input": {
+      "genre": "memoir",
+      "recipientName": "Hassan",
+      "relationship": "",
+      "occasion": "",
+      "tone": "heartwarming",
+      "customTitle": "Hassan bhai ki book",
+      "customSubtitle": "Hassan bhai ki book ka subtitle",
+      "coverTheme": "soft-keepsake",
+      "coverSettings": {
+        "paletteMode": "auto",
+        "primaryColor": "#f8d7da",
+        "secondaryColor": "#fff1e6",
+        "accentColor": "#5c4b51",
+        "photoScale": 1,
+        "photoX": 50,
+        "photoY": 38,
+        "titleX": 50,
+        "titleY": 70,
+        "titleAlign": "center",
+        "artDensity": 55,
+        "aiMode": "local-vector"
+      },
+      "lifeNotes": "Hello it time to siging off.",
+      "recipientPhoto": {
+        "fileName": "e45f6abf-ad8a-4b96-a1b7-7e918ef82b70-recipient-photo.jpg",
+        "publicUrl": "/uploads/e45f6abf-ad8a-4b96-a1b7-7e918ef82b70-recipient-photo.jpg",
+        "originalName": "girl holding a book.jpg",
+        "mimetype": "image/jpeg",
+        "faceCheck": {
+          "accepted": true,
+          "provider": "local-dev-safe",
+          "faces": null,
+          "needsProductionValidation": true,
+          "message": "Photo accepted for local testing. Strict face validation should be enabled with AWS Rekognition before launch."
+        }
+      },
+      "storyUpload": null,
+      "answers": [
+        "How was that a",
+        "How was that b ",
+        "How was that c ",
+        "How was that d",
+        "Hello it time to siging off."
+      ]
+    },
+    "toc": {
+      "title": "Hassan bhai ki book hai new",
+      "subtitle": "Hassan bhai ki book ka subtitlesd",
+      "estimatedPages": 160,
+      "genre": "Life Story Memoir",
+      "titleInputs": {
+        "trait": "How Was That a",
+        "secondTrait": "",
+        "memoryPhrase": "How Was That",
+        "themePhrase": "How Was That",
+        "placePhrase": "How Was",
+        "occasionPhrase": "",
+        "relationship": ""
+      },
+      "structureNote": "18 chapters at roughly 8 to 10 pages each, sized for a 6 x 9 printed gift book. The title is generated from the selected genre, recipient name, relationship, occasion, tone, and personal answers.",
+      "chapters": [
+        {
+          "chapter": 1,
+          "title": "Small Details That Matter: Origin",
+          "pages": "1-8",
+          "summary": "This chapter turns how was that a into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 2,
+          "title": "The First Real Test: Turning Point",
+          "pages": "9-16",
+          "summary": "This chapter turns how was that b into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 3,
+          "title": "A Memory That Changes Everything: Challenge",
+          "pages": "17-24",
+          "summary": "This chapter turns how was that c into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 4,
+          "title": "People Who Shaped the Journey: Growth",
+          "pages": "25-32",
+          "summary": "This chapter turns how was that d into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 5,
+          "title": "The Problem That Would Not Go Away: Legacy",
+          "pages": "33-40",
+          "summary": "This chapter turns hello it time to siging off. into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 6,
+          "title": "A Choice Made Under Pressure: Origin",
+          "pages": "41-48",
+          "summary": "This chapter turns how was that a into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 7,
+          "title": "The Hidden Strength Within: Turning Point",
+          "pages": "49-56",
+          "summary": "This chapter turns how was that b into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 8,
+          "title": "A Season of Change: Challenge",
+          "pages": "57-64",
+          "summary": "This chapter turns how was that c into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 9,
+          "title": "Lessons Learned the Hard Way: Growth",
+          "pages": "65-72",
+          "summary": "This chapter turns how was that d into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 10,
+          "title": "The Moment Things Became Clear: Legacy",
+          "pages": "73-80",
+          "summary": "This chapter turns hello it time to siging off. into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 11,
+          "title": "A Gift Only They Could Give: Origin",
+          "pages": "81-88",
+          "summary": "This chapter turns how was that a into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 12,
+          "title": "The Road Back to Hope: Turning Point",
+          "pages": "89-96",
+          "summary": "This chapter turns how was that b into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 13,
+          "title": "What the Story Leaves Behind: Challenge",
+          "pages": "97-104",
+          "summary": "This chapter turns how was that c into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 14,
+          "title": "A Future Worth Celebrating: Growth",
+          "pages": "105-112",
+          "summary": "This chapter turns how was that d into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 15,
+          "title": "The Final Page, Still Unwritten: Legacy",
+          "pages": "113-120",
+          "summary": "This chapter turns hello it time to siging off. into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 16,
+          "title": "The Beginning No One Expected: Origin",
+          "pages": "121-128",
+          "summary": "This chapter turns how was that a into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 17,
+          "title": "A Name That Carries a Story: Turning Point",
+          "pages": "129-136",
+          "summary": "This chapter turns how was that b into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 18,
+          "title": "The World Around the Main Character: Challenge",
+          "pages": "137-160",
+          "summary": "This chapter turns how was that c into part of Hassan's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        }
+      ]
+    },
+    "tocRegenerationCount": 2,
+    "coverRegenerationCount": 1,
+    "coverVariant": 1,
+    "coverTheme": "soft-keepsake",
+    "coverSettings": {
+      "paletteMode": "auto",
+      "primaryColor": "#f8d7da",
+      "secondaryColor": "#fff1e6",
+      "accentColor": "#5c4b51",
+      "photoScale": 1,
+      "photoX": 50,
+      "photoY": 38,
+      "titleX": 50,
+      "titleY": 70,
+      "titleAlign": "center",
+      "artDensity": 55,
+      "aiMode": "local-vector"
+    },
+    "product": {
+      "binding": "paperback",
+      "label": "Paperback",
+      "description": "Custom 6 x 9 paperback gift book",
+      "priceCents": 6900,
+      "podPackageId": "0600X0900.BW.STD.PB.060UW444.MXX",
+      "quantity": 1,
+      "shippingLevel": "MAIL"
+    },
+    "customer": {
+      "email": "saeed.abdullah513@gmail.com",
+      "name": "Tailor Deep",
+      "phone": "+924232423422",
+      "linkedinUrl": ""
+    },
+    "shippingAddress": {
+      "name": "Tailor Deep",
+      "street1": "asdsad",
+      "city": "dasdsad",
+      "state_code": "NY",
+      "postcode": "sadsadsa",
+      "country_code": "Pakistan",
+      "phone_number": "+924232423422",
+      "email": "saeed.abdullah513@gmail.com"
+    },
+    "discountCode": "K7MX3-QBNR2",
+    "subtotalCents": 6900,
+    "futurePreferences": {
+      "wantsPromotion": true,
+      "wantsGhostwriting": true,
+      "wantsPublishing": true,
+      "wantsCustomCover": false
+    },
+    "termsAccepted": true,
+    "pageCount": 160,
+    "discountCents": 3450,
+    "totalCents": 3450,
+    "aiCover": {
+      "provider": "mock",
+      "enabled": false,
+      "prompt": "Create abstract book-cover background art for a personalized printed gift book.\nTitle: \"Hassan bhai ki book hai new\". Subtitle: \"Hassan bhai ki book ka subtitlesd\".\nRecipient inspiration: Hassan. Genre: memoir. Tone: heartwarming.\nPersonal details to reflect abstractly: How was that a | How was that b | How was that c | How was that d.\nUse rich, tasteful, commercial book-cover graphics. Avoid text inside the image because the app places title text separately.\nCreate artwork suitable for both front and back cover. Include abstract shapes and symbolic motifs, not a literal full cover layout.\nUse a genre-appropriate pastel-to-premium color palette.\nVariation number: 1.",
+      "message": "Local vector cover art was used. Add an AI_COVER_PROVIDER and API key later to generate image assets."
+    },
+    "luluCoverDimensions": {
+      "mock": true,
+      "message": "Lulu credentials are not configured. This is a local mock response.",
+      "payload": {
+        "pod_package_id": "0600X0900.BW.STD.PB.060UW444.MXX",
+        "page_count": 160,
+        "unit": "PT"
+      }
+    },
+    "files": {
+      "interiorUrl": "http://localhost:4242/uploads/f30133fe-f9e9-4508-b4e3-0dfd65d85319-interior.pdf",
+      "coverUrl": "http://localhost:4242/uploads/f30133fe-f9e9-4508-b4e3-0dfd65d85319-cover-v1.pdf",
+      "coverPreviewUrl": "/uploads/f30133fe-f9e9-4508-b4e3-0dfd65d85319-cover-v1.pdf",
+      "recipientPhotoUrl": "/uploads/e45f6abf-ad8a-4b96-a1b7-7e918ef82b70-recipient-photo.jpg"
+    },
+    "coverSpecs": {
+      "source": "local-fallback",
+      "unit": "PT",
+      "trimWidthIn": 6,
+      "trimHeightIn": 9,
+      "bleedIn": 0.125,
+      "wrapIn": 0,
+      "spineWidthIn": 0.36036036036036034,
+      "width": 907.9459459459459,
+      "height": 666,
+      "frontX": 466.94594594594594,
+      "backX": 9,
+      "spineX": 441,
+      "panelY": 9,
+      "panelWidth": 432,
+      "panelHeight": 648,
+      "spineWidth": 25.945945945945944
+    },
+    "notification": {
+      "sent": false,
+      "savedLocally": true,
+      "message": "SMTP is not configured, so the notification was saved locally in server/data/notifications.json."
+    },
+    "paidAt": "2026-05-19T18:26:05.633Z"
   }
 ]

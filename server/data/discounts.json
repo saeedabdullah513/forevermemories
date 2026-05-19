@@ -1,0 +1,182 @@
+[
+  {
+    "code": "K7MX3-QBNR2",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 1,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "P4WN9-FZLT6",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "H2VD8-YCJK5",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "R6BQ1-XMWT3",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "T9FZ4-LPKN7",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "W3JY8-DQRM5",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "N5XT2-HVBK9",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "M8RQ6-ZFWJ1",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "B1KN7-YPTX4",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "J4DW3-MRQZ8",
+    "type": "percent",
+    "value": 50,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "F7YB5-NTKX2",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "Q2XM9-WBFJ6",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "Z6LP1-NQKR4",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "V9KT8-MXBZ3",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "C3NW5-QZLY7",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "G1RZ4-XPTM9",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "X8QJ2-BVNF5",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "L5MK7-DYWQ3",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "D4VX9-GZNK1",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  },
+  {
+    "code": "Y7FQ6-TKWM8",
+    "type": "percent",
+    "value": 100,
+    "active": true,
+    "maxRedemptions": 1,
+    "used": 0,
+    "createdAt": "2026-05-19T00:00:00.000Z"
+  }
+]

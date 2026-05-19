@@ -21,7 +21,7 @@
       <a href="#how">How it works</a>
       <a href="#builder">Create</a>
       <a href="#life-upload">Upload Story</a>
-      <a href="/admin.html" class="nav-cta">Admin</a>
+      <!-- <a href="/admin.html" class="nav-cta">Admin</a> -->
     </nav>
   </header>
 
@@ -47,7 +47,7 @@
         <div class="floating-card card-one">18 custom chapters</div>
         <div class="floating-card card-two">160 pages</div>
         <div class="book-cover" id="heroCover">
-          <div class="cover-photo-wrap"><img id="heroCoverImage" alt="Recipient cover preview" /></div>
+          <div class="cover-photo-wrap has-image" id="heroCoverWrap"><img id="heroCoverImage" src="/banner-image.png" alt="Recipient cover preview" /></div>
           <span>Forever Memories</span>
           <h2 id="coverTitle">A Story Made Just for Them</h2>
           <p id="coverSubtitle">Custom keepsake edition</p>
@@ -185,7 +185,7 @@
           <div class="form-step" data-step="4" id="life-upload">
             <span class="eyebrow">Step 5</span>
             <h2>Upload a story, resume, or life notes.</h2>
-            <p class="helper-text">This optional path helps the system create a table of contents from the client's life, career, achievements, expertise, or personal journey. TXT and PDF/DOC/DOCX files are accepted locally, while TXT files can be read directly in this MVP.</p>
+            <br>
             <div class="cover-builder-grid">
               <label class="upload-zone" for="storyFile">
                 <input id="storyFile" name="storyFile" type="file" accept=".txt,.md,.pdf,.doc,.docx,application/pdf,text/plain" />
@@ -291,6 +291,13 @@
               <span class="status" id="coverStatus">Upload a photo and generate the TOC first.</span>
             </div>
             <iframe id="finalCoverFrame" class="final-cover-frame" title="Final cover preview"></iframe>
+
+            <div class="preference-box" style="margin-top:20px;">
+              <label class="check-row">
+                <input type="checkbox" name="wantsCustomCover" id="wantsCustomCover" value="yes" />
+                I want a custom cover design for my book.
+              </label>
+            </div>
           </div>
 
           <!-- Step 8 — Checkout -->
@@ -369,6 +376,17 @@
           <span>Forever Memories</span>
         </a>
         <p>Personalized printed books crafted from real stories. A premium gift that goes beyond ordinary.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Product</h4>

@@ -103,11 +103,13 @@ function scheduleCoverRefresh() {
 }
 
 function setStep(index) {
+  syncTocFromEditor();
   currentStep = Math.max(0, Math.min(index, steps.length - 1));
   steps.forEach((step, i) => step.classList.toggle('active', i === currentStep));
   progressItems.forEach((item, i) => item.classList.toggle('active', i === currentStep));
   backBtn.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
   nextBtn.style.display = currentStep === steps.length - 1 ? 'none' : 'inline-flex';
+  if (currentStep === 7) scheduleCoverRefresh();
 }
 
 function collectInput() {
@@ -135,7 +137,7 @@ function collectShippingAddress() {
 }
 function collectFuturePreferences() {
   const data = new FormData(form);
-  return { wantsPromotion: data.get('futurePromote') === 'yes', wantsGhostwriting: data.get('futureGhostwrite') === 'yes', wantsPublishing: data.get('futurePublish') === 'yes' };
+  return { wantsPromotion: data.get('futurePromote') === 'yes', wantsGhostwriting: data.get('futureGhostwrite') === 'yes', wantsPublishing: data.get('futurePublish') === 'yes', wantsCustomCover: data.get('wantsCustomCover') === 'yes' };
 }
 
 function updateCoverText(title, subtitle) {
@@ -146,7 +148,17 @@ function updateCoverText(title, subtitle) {
   ['coverSubtitle', 'miniCoverSubtitle'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = coverSubtitle; });
 }
 function updateCoverImage(src) {
-  ['coverImagePreview', 'heroCoverImage'].forEach(id => { const img = document.getElementById(id); if (!img) return; img.src = src || ''; img.parentElement.classList.toggle('has-image', Boolean(src)); });
+  ['coverImagePreview', 'heroCoverImage'].forEach(id => {
+    const img = document.getElementById(id);
+    if (!img) return;
+    img.src = src || '';
+    img.parentElement.classList.toggle('has-image', Boolean(src));
+    if (id === 'heroCoverImage' && src) {
+      img.style.objectFit = 'cover';
+      img.parentElement.style.height = '155px';
+      img.parentElement.style.background = '';
+    }
+  });
 }
 
 async function browserDetectFace(file) {
@@ -321,7 +333,60 @@ async function createLuluJob() {
   catch (error) { checkoutStatus.textContent = error.message; }
 }
 
-nextBtn.addEventListener('click', () => setStep(currentStep + 1));
+function validateStep(step) {
+  const data = new FormData(form);
+
+  // Step 2 (data-step="1") — Recipient Name
+  if (step === 1) {
+    if (!data.get('recipientName')?.trim()) {
+      showToast('Please enter the recipient\'s name before continuing.', 'error');
+      return false;
+    }
+  }
+
+  // Step 3 (data-step="2") — Photo upload
+  if (step === 2) {
+    if (!recipientPhoto) {
+      showToast('Please upload a recipient photo before continuing.', 'error');
+      return false;
+    }
+  }
+
+  // Step 5 (data-step="4") — Story/life notes upload
+  if (step === 4) {
+    const hasFile = Boolean(storyUpload);
+    const hasNotes = data.get('lifeNotes')?.trim().length > 0;
+    if (!hasFile && !hasNotes) {
+      showToast('Please upload a story file or paste life notes before continuing.', 'error');
+      return false;
+    }
+  }
+
+  // Step 6 (data-step="5") — Preferred Book Title + TOC must be generated
+  if (step === 5) {
+    if (!data.get('customTitle')?.trim()) {
+      showToast('Please enter a preferred book title before continuing.', 'error');
+      return false;
+    }
+    if (!currentToc) {
+      showToast('Please generate the table of contents before continuing.', 'error');
+      return false;
+    }
+  }
+
+  // Step 7 (data-step="6") — Final book title must be filled
+  if (step === 6) {
+    const titleEl = document.getElementById('editableTitle');
+    if (!titleEl || !titleEl.value.trim()) {
+      showToast('Please enter the final book title before continuing.', 'error');
+      return false;
+    }
+  }
+
+  return true;
+}
+
+nextBtn.addEventListener('click', () => { if (validateStep(currentStep)) setStep(currentStep + 1); });
 backBtn.addEventListener('click', () => setStep(currentStep - 1));
 generateBtn.addEventListener('click', () => generateToc(true).catch(e => tocStatus.textContent = e.message));
 regenerateTocBtn.addEventListener('click', () => generateToc(true).catch(e => tocStatus.textContent = e.message));
@@ -343,5 +408,19 @@ form.addEventListener('input', event => {
   }
   if (event.target.name === 'binding') { resetDiscount(); updatePrice(); generateCoverPreview().catch(() => {}); }
   if (event.target.classList && event.target.classList.contains('cover-control')) { scheduleCoverRefresh(); }
+});
+const editableTitleEl = document.getElementById('editableTitle');
+const editableSubtitleEl = document.getElementById('editableSubtitle');
+if (editableTitleEl) editableTitleEl.addEventListener('input', () => {
+  if (currentToc) {
+    currentToc.title = editableTitleEl.value.trim() || currentToc.title;
+    updateCoverText(currentToc.title, currentToc.subtitle);
+  }
+});
+if (editableSubtitleEl) editableSubtitleEl.addEventListener('input', () => {
+  if (currentToc) {
+    currentToc.subtitle = editableSubtitleEl.value.trim() || currentToc.subtitle;
+    updateCoverText(currentToc.title, currentToc.subtitle);
+  }
 });
 setStep(0); updatePrice(); updateCoverText(); updateCoverControlLabels();

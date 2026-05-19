@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us | Forever Memories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    /* ── About Hero ── */
+    .about-hero {
+      background: #111111;
+      color: #fff;
+      padding: 96px 24px 80px;
+      text-align: center;
+    }
+    .about-hero .eyebrow { color: #F05A40; }
+    .about-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 680px;
+      margin: 14px auto 0;
+      color: #fff;
+    }
+    .about-hero p {
+      margin: 20px auto 0;
+      max-width: 560px;
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* ── Stats strip ── */
+    .stats-strip {
+      background: #F05A40;
+      padding: 32px 24px;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      flex: 1;
+      min-width: 160px;
+      max-width: 220px;
+      text-align: center;
+      padding: 16px 24px;
+      border-right: 1px solid rgba(255,255,255,0.25);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item strong {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-item span {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* ── Story section ── */
+    .about-story {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .about-story .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #F05A40;
+      margin-bottom: 18px;
+    }
+    .about-story .section-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: #F05A40;
+    }
+    .about-story h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #111111;
+      line-height: 1.2;
+      margin: 0 0 28px;
+    }
+    .about-story p {
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .about-story p:last-child { margin-bottom: 0; }
+
+    /* ── Values section ── */
+    .about-values-section {
+      background: #F7F7F4;
+      padding: 80px 24px;
+    }
+    .about-values-section .inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .about-values-section .section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .about-values-section .section-header .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #F05A40;
+      margin-bottom: 14px;
+    }
+    .about-values-section .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: #111111;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .value-card {
+      background: #fff;
+      border: 1px solid #E5E5E5;
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .value-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      transform: translateY(-3px);
+    }
+    .value-num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #F05A40;
+      background: #FEF2F0;
+      border-radius: 6px;
+      padding: 4px 10px;
+      margin-bottom: 18px;
+    }
+    .value-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111111;
+      margin: 0 0 12px;
+      line-height: 1.35;
+    }
+    .value-card p {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── CTA Banner ── */
+    .about-cta {
+      background: #111111;
+      padding: 80px 24px;
+      text-align: center;
+      color: #fff;
+    }
+    .about-cta h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: #fff;
+      max-width: 560px;
+      margin: 0 auto 12px;
+      line-height: 1.2;
+    }
+    .about-cta p {
+      color: rgba(255,255,255,0.6);
+      margin: 0 auto 32px;
+      max-width: 460px;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 600px) {
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
+      .stat-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">F</span>
+      <span>Forever Memories</span>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#how">How it works</a>
+      <a href="/#builder" class="nav-cta">Create a book</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="about-hero">
+      <span class="eyebrow">Who we are</span>
+      <h1>We turn people's stories into gifts they can hold.</h1>
+      <p>Forever Memories started with one simple belief — the best gift you can give someone is proof that their life mattered enough to become a book.</p>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-strip">
+      <div class="stat-item">
+        <strong>160</strong>
+        <span>Pages per book</span>
+      </div>
+      <div class="stat-item">
+        <strong>18</strong>
+        <span>Custom chapters</span>
+      </div>
+      <div class="stat-item">
+        <strong>6+</strong>
+        <span>Story genres</span>
+      </div>
+      <div class="stat-item">
+        <strong>2</strong>
+        <span>Print formats</span>
+      </div>
+    </div>
+
+    <!-- Our Story -->
+    <section class="about-story">
+      <span class="section-label">Our story</span>
+      <h2>Born from a gift no store could sell.</h2>
+      <p>Forever Memories began just like many heartfelt ideas do — driven by a genuine problem that no gift from a store could quite fix.</p>
+      <p>We wanted to give someone we loved something truly meaningful. Something beyond flowers that wilt quickly or a box left unopened. Instead, we envisioned a real book, personalized with their name on the cover, telling their story through every chapter — a keepsake they could cherish and hold onto forever.</p>
+      <p>Every book that ships from us goes to someone who matters to someone else. We think about that with every order.</p>
+    </section>
+
+    <!-- Values -->
+    <section class="about-values-section">
+      <div class="inner">
+        <div class="section-header">
+          <div class="section-label">What drives us</div>
+          <h2>Four principles behind every book we make.</h2>
+        </div>
+        <div class="values-grid">
+          <div class="value-card">
+            <span class="value-num">01</span>
+            <h3>The Gift Should Feel Personal</h3>
+            <p>We build tools that pull real details from you so the book reads like it was written by someone who knows the recipient — not by a template.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-num">02</span>
+            <h3>Print Quality Is Not Optional</h3>
+            <p>A 160-page book gets opened, flipped through, shared, and kept. We take the physical product seriously, from cover finish to paper weight.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-num">03</span>
+            <h3>Simplicity Is the Real Feature</h3>
+            <p>The whole process should feel like a conversation, not a form. You answer questions; we do the rest. That has always been the goal.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-num">04</span>
+            <h3>Stories Deserve to Last</h3>
+            <p>Every family has stories that live only in someone's memory. A printed book is one of the few gifts that can outlast the people who give it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <h2>Ready to create a book for someone you love?</h2>
+      <p>It takes about 10 minutes. The result lasts a lifetime.</p>
+      <a class="button primary" href="/#builder">Start creating now</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <span class="brand-mark">F</span>
+          <span>Forever Memories</span>
+        </a>
+        <p>Personalized printed books crafted from real stories. A premium gift that goes beyond ordinary.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="/#builder">Create a book</a>
+        <a href="/#how">How it works</a>
+        <a href="/#life-upload">Upload story</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/terms.html">Terms &amp; Conditions</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/admin.html">Admin portal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Forever Memories. All rights reserved.</span>
+      <span>Powered by Canvas Digital</span>
+    </div>
+  </footer>
+
+</body>
+</html>

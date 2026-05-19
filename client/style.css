@@ -132,6 +132,14 @@ img { max-width: 100%; height: auto; display: block; }
   flex-shrink: 0;
 }
 
+.brand-logo {
+  height: 38px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 nav {
   display: flex;
   gap: 2px;

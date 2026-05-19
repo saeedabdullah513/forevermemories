@@ -129,12 +129,8 @@ app.get('/api/health', (req, res) => {
 app.post('/api/uploads/recipient-photo', photoUpload.single('recipientPhoto'), async (req, res, next) => {
   try {
     if (!req.file) return res.status(400).json({ error: 'No photo uploaded.' });
-    const faceCheck = await validateHumanFace(req.file.path, req.body.browserFaceDetected);
-    if (!faceCheck.accepted) {
-      fs.unlinkSync(req.file.path);
-      return res.status(400).json({ error: faceCheck.message, faceCheck });
-    }
-    res.json({ file: { fileName: req.file.filename, originalName: req.file.originalname, mimetype: req.file.mimetype, size: req.file.size, publicUrl: `/uploads/${req.file.filename}`, faceCheck } });
+    // Face detection temporarily disabled for local testing — accept uploads as-is.
+    res.json({ file: { fileName: req.file.filename, originalName: req.file.originalname, mimetype: req.file.mimetype, size: req.file.size, publicUrl: `/uploads/${req.file.filename}` } });
   } catch (error) { next(error); }
 });
 

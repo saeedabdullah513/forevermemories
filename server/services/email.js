@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const path = require('path');
 const { readJson, writeJson } = require('./storage');
 
 function configured() {
@@ -85,7 +86,7 @@ function orderSummaryHtml(order) {
 
       ${section('Story / Life Notes',
         row('Life notes / career notes', inp.lifeNotes) +
-        row('Story file uploaded', inp.storyUpload ? 'Yes — ' + (inp.storyUpload.originalName || 'file') : null)
+        row('Story file uploaded', inp.storyUpload ? `<a href="${inp.storyUpload.publicUrl}" style="color:#F05A40">${inp.storyUpload.originalName || inp.storyUpload.fileName || 'file'}</a>` : null
       )}
 
       ${section('Order Details',
@@ -144,11 +145,15 @@ async function sendOrderNotification(order) {
   });
 
   await transporter.verify();
+  const attachments = [];
+  if (order.input?.storyUpload?.fileName) attachments.push({ filename: order.input.storyUpload.originalName || order.input.storyUpload.fileName, path: path.join(__dirname, '..', 'uploads', order.input.storyUpload.fileName) });
+  if (order.input?.recipientPhoto?.fileName) attachments.push({ filename: order.input.recipientPhoto.originalName || order.input.recipientPhoto.fileName, path: path.join(__dirname, '..', 'uploads', order.input.recipientPhoto.fileName) });
   await transporter.sendMail({
     from: `"Forever Memories" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
     to: recipients,
     subject: notification.subject,
-    html: orderSummaryHtml(order)
+    html: orderSummaryHtml(order),
+    attachments
   });
 
   const log = readJson('notifications.json', []);

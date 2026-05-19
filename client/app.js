@@ -162,20 +162,8 @@ function updateCoverImage(src) {
 }
 
 async function browserDetectFace(file) {
-  // Browser FaceDetector is experimental and often rejects real human photos.
-  // For local testing, this is intentionally non-blocking. Production strict
-  // validation should happen on the server with AWS Rekognition.
-  if (!('FaceDetector' in window)) {
-    return { supported: false, detected: false, skipped: true, message: 'Browser face detection is not available. The photo will still be accepted for local testing.' };
-  }
-  try {
-    const detector = new FaceDetector({ fastMode: true, maxDetectedFaces: 3 });
-    const bitmap = await createImageBitmap(file);
-    const faces = await detector.detect(bitmap);
-    return { supported: true, detected: faces.length >= 1, count: faces.length, message: faces.length >= 1 ? 'A face was detected.' : 'Browser could not confirm a face. The photo will still be accepted for local testing.' };
-  } catch {
-    return { supported: false, detected: false, skipped: true, message: 'Browser face detection failed. The photo will still be accepted for local testing.' };
-  }
+  // Browser face detection temporarily unused — keep function for future re-enable.
+  return { supported: false, detected: false, skipped: true, message: 'Browser face detection is disabled for local testing.' };
 }
 
 async function uploadRecipientPhoto(file) {
@@ -185,18 +173,15 @@ async function uploadRecipientPhoto(file) {
   const fileExt = `.${(file.name || '').split('.').pop().toLowerCase()}`;
   if (!allowed.includes(file.type) && !allowedExt.includes(fileExt)) throw new Error('Please upload a JPG, PNG, or WebP image.');
   if (file.size > 6 * 1024 * 1024) throw new Error('Please upload an image smaller than 6MB.');
-  uploadStatus.textContent = 'Preparing photo preview...';
-  const faceResult = await browserDetectFace(file);
-  uploadStatus.textContent = faceResult.detected ? 'Photo accepted. Uploading...' : `${faceResult.message} Uploading photo...`;
+  uploadStatus.textContent = 'Uploading photo...';
   const body = new FormData();
   body.append('recipientPhoto', file);
-  body.append('browserFaceDetected', faceResult.detected ? 'true' : (faceResult.skipped ? 'skipped' : 'unconfirmed'));
   const response = await fetch('/api/uploads/recipient-photo', { method: 'POST', body });
   const data = await response.json();
   if (!response.ok) throw new Error(data.error || 'Photo upload failed.');
   recipientPhoto = data.file;
   updateCoverImage(data.file.publicUrl);
-  uploadStatus.textContent = `Photo accepted. ${data.file.faceCheck?.message || ''}`;
+  uploadStatus.textContent = `Photo accepted.`;
   currentOrder = null;
   showToast('Photo uploaded successfully.', 'success');
   await generateCoverPreview().catch(e => { coverStatus.textContent = e.message; showToast(e.message, 'error'); });
@@ -366,10 +351,6 @@ function validateStep(step) {
   if (step === 5) {
     if (!data.get('customTitle')?.trim()) {
       showToast('Please enter a preferred book title before continuing.', 'error');
-      return false;
-    }
-    if (!currentToc) {
-      showToast('Please generate the table of contents before continuing.', 'error');
       return false;
     }
   }

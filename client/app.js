@@ -128,7 +128,7 @@ function collectInput() {
     answers: [data.get('answer1'), data.get('answer2'), data.get('answer3'), data.get('answer4'), data.get('lifeNotes'), storyUpload?.extractedText].filter(Boolean)
   };
 }
-function collectCustomer() { const data = new FormData(form); return { email: data.get('email') }; }
+function collectCustomer() { const data = new FormData(form); return { email: data.get('email'), name: data.get('shipName'), phone: data.get('phone'), linkedinUrl: data.get('linkedinUrl') || '' }; }
 function collectShippingAddress() {
   const data = new FormData(form);
   return { name: data.get('shipName') || data.get('recipientName') || 'Test Recipient', street1: data.get('street1') || '123 Test Street', city: data.get('city') || 'Austin', state_code: data.get('state') || 'TX', postcode: data.get('postcode') || '78701', country_code: data.get('country') || 'US', phone_number: data.get('phone') || '+15551234567', email: data.get('email') || 'customer@example.com' };
@@ -289,6 +289,10 @@ async function createOrder() {
   if (!currentToc) await generateToc(false);
   syncTocFromEditor();
   if (!recipientPhoto) throw new Error('Please upload an approved human recipient photo before checkout.');
+  const _fd = new FormData(form);
+  if (!_fd.get('email')) throw new Error('Please enter your email address.');
+  if (!_fd.get('shipName')) throw new Error('Please enter your full name.');
+  if (!_fd.get('phone')) throw new Error('Please enter your phone number.');
   if (!document.getElementById('termsAccepted').checked) throw new Error('Please accept the Terms and Conditions and Privacy Policy before checkout.');
   checkoutStatus.textContent = 'Creating production-style order files...';
   const response = await fetch('/api/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ input: collectInput(), toc: currentToc, customer: collectCustomer(), shippingAddress: collectShippingAddress(), futurePreferences: collectFuturePreferences(), termsAccepted: document.getElementById('termsAccepted').checked, discountCode: document.getElementById('discountCode').value, subtotalCents, product: selectedProduct(), tocRegenerationCount: tocAttempts, coverRegenerationCount: coverAttempts, coverVariant, coverTheme: new FormData(form).get('coverTheme'), coverSettings: collectCoverSettings() }) });

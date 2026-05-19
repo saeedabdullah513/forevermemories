@@ -8,23 +8,37 @@ function configured() {
 function orderSummaryHtml(order) {
   const chapters = (order.toc?.chapters || []).map(ch => `<li><strong>Chapter ${ch.chapter}: ${ch.title}</strong><br>${ch.summary || ''}</li>`).join('');
   const prefs = order.futurePreferences || {};
+  const email = order.customer?.email || order.shippingAddress?.email || '';
+  const name = order.customer?.name || order.shippingAddress?.name || '';
+  const phone = order.customer?.phone || order.shippingAddress?.phone_number || '';
+  const linkedin = order.customer?.linkedinUrl || '';
   return `
-    <h2>New Book As A Gift order</h2>
-    <p><strong>Order:</strong> ${order.id}</p>
+    <h2>New Order — Forever Memories</h2>
+
+    <h3 style="border-bottom:2px solid #F05A40;padding-bottom:6px;color:#F05A40;">Customer Details</h3>
+    <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+    <p><strong>Full Name:</strong> ${name}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+    ${linkedin ? `<p><strong>LinkedIn:</strong> <a href="${linkedin}">${linkedin}</a></p>` : ''}
+
+    <h3 style="border-bottom:2px solid #F05A40;padding-bottom:6px;color:#F05A40;">Order Details</h3>
+    <p><strong>Order ID:</strong> ${order.id}</p>
     <p><strong>Status:</strong> ${order.status}</p>
+    <p><strong>Product:</strong> ${order.product?.label || ''}</p>
+    <p><strong>Total:</strong> $${((order.totalCents || 0) / 100).toFixed(2)}</p>
+
+    <h3 style="border-bottom:2px solid #F05A40;padding-bottom:6px;color:#F05A40;">Book Details</h3>
     <p><strong>Title:</strong> ${order.toc?.title || ''}</p>
     <p><strong>Subtitle:</strong> ${order.toc?.subtitle || ''}</p>
     <p><strong>Genre:</strong> ${order.input?.genre || ''}</p>
     <p><strong>Recipient:</strong> ${order.input?.recipientName || ''}</p>
-    <p><strong>Customer email:</strong> ${order.customer?.email || order.shippingAddress?.email || ''}</p>
-    <p><strong>Product:</strong> ${order.product?.label || ''}</p>
-    <p><strong>Total:</strong> $${((order.totalCents || 0) / 100).toFixed(2)}</p>
+
+    <h3 style="border-bottom:2px solid #F05A40;padding-bottom:6px;color:#F05A40;">Future Preferences</h3>
     <p><strong>Future promotion:</strong> ${prefs.wantsPromotion ? 'Yes' : 'No'}</p>
     <p><strong>Future ghostwriting:</strong> ${prefs.wantsGhostwriting ? 'Yes' : 'No'}</p>
     <p><strong>Future publishing:</strong> ${prefs.wantsPublishing ? 'Yes' : 'No'}</p>
-    <p><strong>Interior file:</strong> ${order.files?.interiorUrl || ''}</p>
-    <p><strong>Cover file:</strong> ${order.files?.coverUrl || ''}</p>
-    <h3>Table of Contents</h3>
+
+    <h3 style="border-bottom:2px solid #F05A40;padding-bottom:6px;color:#F05A40;">Table of Contents</h3>
     <ol>${chapters}</ol>
   `;
 }

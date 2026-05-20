@@ -291,7 +291,7 @@ async function createOrder() {
   if (!_fd.get('shipName')) throw new Error('Please enter your full name.');
   if (!_fd.get('phone')) throw new Error('Please enter your phone number.');
   if (!document.getElementById('termsAccepted').checked) throw new Error('Please accept the Terms and Conditions and Privacy Policy before checkout.');
-  checkoutStatus.textContent = 'Creating production-style order files...';
+  checkoutStatus.innerHTML = '<div class="status-loading"><div class="status-spinner"></div><div><strong>Please wait&hellip;</strong><br><span>Creating your personalized book files. This may take a moment.</span></div></div>';
   const response = await fetch('/api/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ input: collectInput(), toc: currentToc, customer: collectCustomer(), shippingAddress: collectShippingAddress(), futurePreferences: collectFuturePreferences(), termsAccepted: document.getElementById('termsAccepted').checked, discountCode: document.getElementById('discountCode').value, subtotalCents, product: selectedProduct(), tocRegenerationCount: tocAttempts, coverRegenerationCount: coverAttempts, coverVariant, coverTheme: new FormData(form).get('coverTheme'), coverSettings: collectCoverSettings() }) });
   const data = await response.json();
   if (!response.ok) throw new Error(data.error || 'Could not create order.');
@@ -302,7 +302,7 @@ async function createOrder() {
 async function checkout() {
   try {
     const order = currentOrder || await createOrder();
-    checkoutStatus.textContent = 'Opening checkout...';
+    checkoutStatus.innerHTML = '<div class="status-loading"><div class="status-spinner"></div><div><strong>Opening checkout&hellip;</strong><br><span>You will be redirected to the payment page shortly.</span></div></div>';
     showToast('Order created. Opening checkout…', 'info');
     const response = await fetch('/api/checkout/create', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ orderId: order.id, termsAccepted: document.getElementById('termsAccepted').checked }) });
     const data = await response.json();
@@ -311,6 +311,7 @@ async function checkout() {
   } catch (error) {
     checkoutStatus.textContent = error.message;
     showToast(error.message, 'error');
+    checkoutStatus.classList.remove('status-loading');
   }
 }
 async function createLuluJob() {

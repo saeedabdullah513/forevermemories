@@ -633,6 +633,38 @@ button:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important
   min-height: 20px;
 }
 
+.status-loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(240, 90, 64, 0.08);
+  border: 1px solid rgba(240, 90, 64, 0.25);
+  border-radius: 10px;
+  color: #F05A40;
+  font-size: 13px;
+}
+.status-loading strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.status-loading span {
+  opacity: 0.75;
+}
+.status-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid rgba(240, 90, 64, 0.25);
+  border-top-color: #F05A40;
+  border-radius: 50%;
+  animation: statusSpin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes statusSpin {
+  to { transform: rotate(360deg); }
+}
+
 /* ============================================================
    GENRE GRID
    ============================================================ */

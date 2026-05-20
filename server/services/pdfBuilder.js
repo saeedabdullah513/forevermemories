@@ -211,7 +211,7 @@ async function createInteriorPdf(order) {
 
   doc.font('Helvetica-Bold').fontSize(28).fillColor('#221F20').text(safeText(order.toc?.title, 'Custom Gift Book'), { align: 'center' });
   doc.moveDown();
-  doc.font('Helvetica').fontSize(14).fillColor('#6B5E62').text(safeText(order.toc?.subtitle, 'Created by Book As A Gift'), { align: 'center' });
+  doc.font('Helvetica').fontSize(14).fillColor('#6B5E62').text(safeText(order.toc?.subtitle, 'Created by Forever Memories'), { align: 'center' });
 
   let pageCounter = 1;
   (order.toc?.chapters || []).forEach(chapter => {
@@ -326,7 +326,7 @@ async function createCoverPdf(order, luluDimensions = null) {
   doc.font('Helvetica').fontSize(12).fillColor(palette[2])
     .text(subtitle, titleX, titleY + 88, { width: titleBoxW, align: settings.titleAlign, lineGap: 2 });
 
-  doc.font('Helvetica-Bold').fontSize(9).fillColor(palette[2]).text('Book As A Gift', frontX + 44, panelY + panelH - 52, { width: backW - 88, align: 'center' });
+  doc.font('Helvetica-Bold').fontSize(9).fillColor(palette[2]).text('Forever Memories', frontX + 44, panelY + panelH - 52, { width: backW - 88, align: 'center' });
 
   // Safety/trim guide for local production review.
   doc.save();

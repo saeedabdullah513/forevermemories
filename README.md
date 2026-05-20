@@ -1,4 +1,4 @@
-# Book As A Gift — Production-Style Local Build
+# Forever Memories — Production-Style Local Build
 
 This version moves the MVP closer to production while still running locally. It includes a guided pastel UI, recipient photo upload, human-face validation, table-of-contents regeneration limits, cover regeneration, paperback/hardcover selection, Stripe checkout support, Lulu sandbox helpers, and full-wrap cover PDF generation.
 
@@ -186,7 +186,7 @@ SMTP_PORT=587
 SMTP_SECURE=false
 SMTP_USER=your-smtp-user
 SMTP_PASS=your-smtp-password
-SMTP_FROM=Book As A Gift <orders@yourdomain.com>
+SMTP_FROM=Forever Memories <orders@yourdomain.com>
 ```
 
 ### Future-service questions before checkout

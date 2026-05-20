@@ -1,12 +1,12 @@
-# Product Analysis: Book As A Gift vs Book By Anyone
+# Product Analysis: Forever Memories vs Book By Anyone
 
 ## BookByAnyone observed flow
 
 Public pages position the product as personalized printed books where the customer shares a few details, the system generates the book title, story or table of contents, lets the customer customize title/cover/theme, and then prints and ships the result. The public site emphasizes fiction, nonfiction, comics, bookmarks, free shipping, high-quality print, satisfaction guarantee, customer reviews, and order tracking.
 
-## Book As A Gift differentiation
+## Forever Memories differentiation
 
-Book As A Gift should avoid copying the exact visual structure. The MVP uses a softer, more immersive guided journey:
+Forever Memories should avoid copying the exact visual structure. The MVP uses a softer, more immersive guided journey:
 
 1. Genre selection
 2. Recipient profile

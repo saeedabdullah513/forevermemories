@@ -1,7 +1,7 @@
 {
   "name": "book-as-a-gift-production",
   "version": "2.2.0",
-  "description": "Production-style local build for Book As A Gift with editable title/TOC, story uploads, admin panel, email notifications, discounts, Lulu sandbox, Stripe checkout, and cover generation.",
+  "description": "Production-style local build for Forever Memories with editable title/TOC, story uploads, admin panel, email notifications, discounts, Lulu sandbox, Stripe checkout, and cover generation.",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -16,6 +16,7 @@
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "multer": "^2.0.2",
+    "archiver": "^7.0.1",
     "nodemailer": "^8.0.7",
     "pdfkit": "^0.15.2",
     "stripe": "^17.5.0",

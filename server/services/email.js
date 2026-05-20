@@ -1,6 +1,34 @@
 const nodemailer = require('nodemailer');
+const archiver = require('archiver');
 const path = require('path');
+const fs = require('fs');
 const { readJson, writeJson } = require('./storage');
+
+function createOrderZip(order) {
+  const uploadsDir = path.join(__dirname, '..', 'uploads');
+  return new Promise((resolve, reject) => {
+    const archive = archiver('zip', { zlib: { level: 6 } });
+    const chunks = [];
+    archive.on('data', chunk => chunks.push(chunk));
+    archive.on('end', () => resolve(Buffer.concat(chunks)));
+    archive.on('error', reject);
+
+    const add = (fileName, archiveName) => {
+      if (!fileName) return;
+      const filePath = path.join(uploadsDir, fileName);
+      if (fs.existsSync(filePath)) archive.file(filePath, { name: archiveName || fileName });
+    };
+
+    add(order.files?.interiorFileName, `${order.id}-interior.pdf`);
+    add(order.files?.coverFileName, `${order.id}-cover.pdf`);
+    if (order.input?.recipientPhoto?.fileName)
+      add(order.input.recipientPhoto.fileName, order.input.recipientPhoto.originalName || order.input.recipientPhoto.fileName);
+    if (order.input?.storyUpload?.fileName)
+      add(order.input.storyUpload.fileName, order.input.storyUpload.originalName || order.input.storyUpload.fileName);
+
+    archive.finalize();
+  });
+}
 
 function configured() {
   return Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS && process.env.ADMIN_NOTIFICATION_EMAIL);
@@ -145,15 +173,13 @@ async function sendOrderNotification(order) {
   });
 
   await transporter.verify();
-  const attachments = [];
-  if (order.input?.storyUpload?.fileName) attachments.push({ filename: order.input.storyUpload.originalName || order.input.storyUpload.fileName, path: path.join(__dirname, '..', 'uploads', order.input.storyUpload.fileName) });
-  if (order.input?.recipientPhoto?.fileName) attachments.push({ filename: order.input.recipientPhoto.originalName || order.input.recipientPhoto.fileName, path: path.join(__dirname, '..', 'uploads', order.input.recipientPhoto.fileName) });
+  const zipBuffer = await createOrderZip(order);
   await transporter.sendMail({
     from: `"Forever Memories" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
     to: recipients,
     subject: notification.subject,
     html: orderSummaryHtml(order),
-    attachments
+    attachments: [{ filename: `order-${order.id}.zip`, content: zipBuffer, contentType: 'application/zip' }]
   });
 
   const log = readJson('notifications.json', []);

@@ -99,6 +99,21 @@ function saveOrders(orders) { writeJson('orders.json', orders); }
 function findOrder(orderId) { return getOrders().find(o => o.id === orderId); }
 function updateOrder(order) { const orders = getOrders(); const i = orders.findIndex(o => o.id === order.id); if (i >= 0) orders[i] = order; else orders.push(order); saveOrders(orders); return order; }
 
+function deleteFile(filePath) { try { fs.unlinkSync(filePath); } catch {} }
+
+function cleanupOrderFiles(order) {
+  if (order.files?.interiorFileName) deleteFile(path.join(uploadsDir, order.files.interiorFileName));
+  if (order.files?.coverFileName) deleteFile(path.join(uploadsDir, order.files.coverFileName));
+  if (order.input?.recipientPhoto?.fileName) deleteFile(path.join(uploadsDir, order.input.recipientPhoto.fileName));
+  if (order.input?.storyUpload?.fileName) deleteFile(path.join(uploadsDir, order.input.storyUpload.fileName));
+}
+
+function cleanupPreviewFiles() {
+  try {
+    fs.readdirSync(uploadsDir).filter(f => f.startsWith('preview-')).forEach(f => deleteFile(path.join(uploadsDir, f)));
+  } catch {}
+}
+
 async function generateProductionFiles(order) {
   const interior = await createInteriorPdf(order);
   if (!order.pageCount) order.pageCount = Number(process.env.LULU_DEFAULT_PAGE_COUNT || 160);
@@ -113,7 +128,9 @@ async function generateProductionFiles(order) {
   const cover = await createCoverPdf(order, luluDims);
   order.files = {
     interiorUrl: `${publicBase()}/${interior.fileName}`,
+    interiorFileName: interior.fileName,
     coverUrl: `${publicBase()}/${cover.fileName}`,
+    coverFileName: cover.fileName,
     coverPreviewUrl: `/uploads/${cover.fileName}`,
     recipientPhotoUrl: order.input.recipientPhoto?.publicUrl || null
   };
@@ -182,6 +199,7 @@ app.post('/api/generate/cover-preview', async (req, res, next) => {
       },
       orderPreview: order
     });
+    cleanupPreviewFiles();
   } catch (error) { next(error); }
 });
 
@@ -207,6 +225,7 @@ app.post('/api/orders', async (req, res, next) => {
     order.discountCents = discount.valid ? discount.discountCents : 0;
     order.totalCents = Math.max(0, order.subtotalCents - order.discountCents);
     order.aiCover = await generateCoverArtBrief({ input, toc: order.toc, coverSettings, coverVariant: order.coverVariant });
+    cleanupPreviewFiles();
     await generateProductionFiles(order);
     try {
       order.notification = await sendOrderNotification(order);
@@ -214,6 +233,7 @@ app.post('/api/orders', async (req, res, next) => {
       console.error('[email] Failed to send order notification:', emailErr.message);
       order.notification = { sent: false, error: emailErr.message };
     }
+    cleanupOrderFiles(order);
     updateOrder(order);
     res.json({ order });
   } catch (error) { next(error); }
@@ -361,4 +381,4 @@ app.use((error, req, res, next) => {
   res.status(400).json({ error: error.message || 'Something went wrong.' });
 });
 
-app.listen(port, () => console.log(`Book As A Gift running at http://localhost:${port}`));
+app.listen(port, () => console.log(`Forever Memories running at http://localhost:${port}`));

@@ -835,5 +835,271 @@
       "message": "Order notification email sent."
     },
     "paidAt": "2026-05-19T19:24:18.698Z"
+  },
+  {
+    "id": "cda076f8-e2c3-449b-b2e5-e35e6df7ac10",
+    "status": "MOCK_PAID",
+    "createdAt": "2026-05-19T19:42:28.448Z",
+    "input": {
+      "genre": "memoir",
+      "recipientName": "Oumama",
+      "relationship": "",
+      "occasion": "",
+      "tone": "heartwarming",
+      "customTitle": "erewr",
+      "customSubtitle": "erer",
+      "coverTheme": "soft-keepsake",
+      "coverSettings": {
+        "paletteMode": "auto",
+        "primaryColor": "#f8d7da",
+        "secondaryColor": "#fff1e6",
+        "accentColor": "#5c4b51",
+        "photoScale": 1,
+        "photoX": 50,
+        "photoY": 38,
+        "titleX": 50,
+        "titleY": 70,
+        "titleAlign": "center",
+        "artDensity": 55,
+        "aiMode": "local-vector"
+      },
+      "lifeNotes": "ewrerererw",
+      "recipientPhoto": {
+        "fileName": "4ef616fc-876c-4596-b3bc-10c2d9bfa642-recipient-photo.png",
+        "publicUrl": "/uploads/4ef616fc-876c-4596-b3bc-10c2d9bfa642-recipient-photo.png",
+        "originalName": "forevermemories-logo.png",
+        "mimetype": "image/png"
+      },
+      "storyUpload": null,
+      "answers": [
+        "ewrerererw"
+      ]
+    },
+    "toc": {
+      "title": "erewr",
+      "subtitle": "erer",
+      "estimatedPages": 160,
+      "genre": "Life Story Memoir",
+      "titleInputs": {
+        "trait": "Ewrerererw",
+        "secondTrait": "",
+        "memoryPhrase": "",
+        "themePhrase": "",
+        "placePhrase": "",
+        "occasionPhrase": "",
+        "relationship": ""
+      },
+      "structureNote": "18 chapters at roughly 8 to 10 pages each, sized for a 6 x 9 printed gift book. The title is generated from the selected genre, recipient name, relationship, occasion, tone, and personal answers.",
+      "chapters": [
+        {
+          "chapter": 1,
+          "title": "Small Details That Matter: Origin",
+          "pages": "1-8",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 2,
+          "title": "The First Real Test: Turning Point",
+          "pages": "9-16",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 3,
+          "title": "A Memory That Changes Everything: Challenge",
+          "pages": "17-24",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 4,
+          "title": "People Who Shaped the Journey: Growth",
+          "pages": "25-32",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 5,
+          "title": "The Problem That Would Not Go Away: Legacy",
+          "pages": "33-40",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 6,
+          "title": "A Choice Made Under Pressure: Origin",
+          "pages": "41-48",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 7,
+          "title": "The Hidden Strength Within: Turning Point",
+          "pages": "49-56",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 8,
+          "title": "A Season of Change: Challenge",
+          "pages": "57-64",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 9,
+          "title": "Lessons Learned the Hard Way: Growth",
+          "pages": "65-72",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 10,
+          "title": "The Moment Things Became Clear: Legacy",
+          "pages": "73-80",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 11,
+          "title": "A Gift Only They Could Give: Origin",
+          "pages": "81-88",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 12,
+          "title": "The Road Back to Hope: Turning Point",
+          "pages": "89-96",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 13,
+          "title": "What the Story Leaves Behind: Challenge",
+          "pages": "97-104",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 14,
+          "title": "A Future Worth Celebrating: Growth",
+          "pages": "105-112",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 15,
+          "title": "The Final Page, Still Unwritten: Legacy",
+          "pages": "113-120",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 16,
+          "title": "The Beginning No One Expected: Origin",
+          "pages": "121-128",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 17,
+          "title": "A Name That Carries a Story: Turning Point",
+          "pages": "129-136",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        },
+        {
+          "chapter": 18,
+          "title": "The World Around the Main Character: Challenge",
+          "pages": "137-160",
+          "summary": "This chapter turns ewrerererw into part of Oumama's a warm, reflective personal journey. It keeps the tone personal for a loved one and connects the story to the special gift."
+        }
+      ]
+    },
+    "tocRegenerationCount": 2,
+    "coverRegenerationCount": 1,
+    "coverVariant": 1,
+    "coverTheme": "soft-keepsake",
+    "coverSettings": {
+      "paletteMode": "auto",
+      "primaryColor": "#f8d7da",
+      "secondaryColor": "#fff1e6",
+      "accentColor": "#5c4b51",
+      "photoScale": 1,
+      "photoX": 50,
+      "photoY": 38,
+      "titleX": 50,
+      "titleY": 70,
+      "titleAlign": "center",
+      "artDensity": 55,
+      "aiMode": "local-vector"
+    },
+    "product": {
+      "binding": "paperback",
+      "label": "Paperback",
+      "description": "Custom 6 x 9 paperback gift book",
+      "priceCents": 6900,
+      "podPackageId": "0600X0900.BW.STD.PB.060UW444.MXX",
+      "quantity": 1,
+      "shippingLevel": "MAIL"
+    },
+    "customer": {
+      "email": "canvaslearning1@gmail.com",
+      "name": "Canvas.course",
+      "phone": "+923423243234",
+      "linkedinUrl": ""
+    },
+    "shippingAddress": {
+      "name": "Canvas.course",
+      "street1": "32 asdd dd asdasdsadsa",
+      "city": "Dallas",
+      "state_code": "TX",
+      "postcode": "32322",
+      "country_code": "Pakistan",
+      "phone_number": "+923423243234",
+      "email": "canvaslearning1@gmail.com"
+    },
+    "discountCode": "",
+    "subtotalCents": 6900,
+    "futurePreferences": {
+      "wantsPromotion": false,
+      "wantsGhostwriting": false,
+      "wantsPublishing": false,
+      "wantsCustomCover": false
+    },
+    "termsAccepted": true,
+    "pageCount": 160,
+    "discountCents": 0,
+    "totalCents": 6900,
+    "aiCover": {
+      "provider": "mock",
+      "enabled": false,
+      "prompt": "Create abstract book-cover background art for a personalized printed gift book.\nTitle: \"erewr\". Subtitle: \"erer\".\nRecipient inspiration: Oumama. Genre: memoir. Tone: heartwarming.\nPersonal details to reflect abstractly: ewrerererw.\nUse rich, tasteful, commercial book-cover graphics. Avoid text inside the image because the app places title text separately.\nCreate artwork suitable for both front and back cover. Include abstract shapes and symbolic motifs, not a literal full cover layout.\nUse a genre-appropriate pastel-to-premium color palette.\nVariation number: 1.",
+      "message": "Local vector cover art was used. Add an AI_COVER_PROVIDER and API key later to generate image assets."
+    },
+    "luluCoverDimensions": {
+      "mock": true,
+      "message": "Lulu credentials are not configured. This is a local mock response.",
+      "payload": {
+        "pod_package_id": "0600X0900.BW.STD.PB.060UW444.MXX",
+        "page_count": 160,
+        "unit": "PT"
+      }
+    },
+    "files": {
+      "interiorUrl": "http://localhost:4242/uploads/cda076f8-e2c3-449b-b2e5-e35e6df7ac10-interior.pdf",
+      "coverUrl": "http://localhost:4242/uploads/cda076f8-e2c3-449b-b2e5-e35e6df7ac10-cover-v1.pdf",
+      "coverPreviewUrl": "/uploads/cda076f8-e2c3-449b-b2e5-e35e6df7ac10-cover-v1.pdf",
+      "recipientPhotoUrl": "/uploads/4ef616fc-876c-4596-b3bc-10c2d9bfa642-recipient-photo.png"
+    },
+    "coverSpecs": {
+      "source": "local-fallback",
+      "unit": "PT",
+      "trimWidthIn": 6,
+      "trimHeightIn": 9,
+      "bleedIn": 0.125,
+      "wrapIn": 0,
+      "spineWidthIn": 0.36036036036036034,
+      "width": 907.9459459459459,
+      "height": 666,
+      "frontX": 466.94594594594594,
+      "backX": 9,
+      "spineX": 441,
+      "panelY": 9,
+      "panelWidth": 432,
+      "panelHeight": 648,
+      "spineWidth": 25.945945945945944
+    },
+    "notification": {
+      "sent": true,
+      "savedLocally": true,
+      "message": "Order notification email sent."
+    },
+    "paidAt": "2026-05-19T19:42:43.035Z"
   }
 ]

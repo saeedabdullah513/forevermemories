@@ -17,6 +17,7 @@
     "helmet": "^8.0.0",
     "multer": "^2.0.2",
     "archiver": "^7.0.1",
+    "sharp": "^0.33.5",
     "nodemailer": "^8.0.7",
     "pdfkit": "^0.15.2",
     "stripe": "^17.5.0",

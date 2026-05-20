@@ -1,7 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 const PDFDocument = require('pdfkit');
+const sharp = require('sharp');
 const { fallbackCoverDimensions } = require('./coverSpecs');
+
+async function toJpegBuffer(filePath) {
+  if (!filePath || !fs.existsSync(filePath)) return null;
+  try {
+    return await sharp(filePath).jpeg({ quality: 92 }).toBuffer();
+  } catch {
+    return null;
+  }
+}
 
 // Generated PDFs must live in /server/uploads because server.js exposes that folder at /uploads.
 // Earlier builds wrote PDFs to /server/generated while returning /uploads/<file>.pdf links, which caused Cannot GET /uploads/... errors.
@@ -189,12 +199,12 @@ function photoPathFromOrder(order) {
   return path.join(__dirname, '..', 'uploads', photo.fileName);
 }
 
-function drawPhoto(doc, photoPath, x, y, w, h, palette) {
+function drawPhoto(doc, photoBuffer, x, y, w, h, palette) {
   doc.save();
   doc.roundedRect(x, y, w, h, 28).fill('#ffffff');
   doc.roundedRect(x + 8, y + 8, w - 16, h - 16, 22).clip();
-  if (photoPath && fs.existsSync(photoPath)) {
-    doc.image(photoPath, x + 8, y + 8, { fit: [w - 16, h - 16], align: 'center', valign: 'center' });
+  if (photoBuffer) {
+    doc.image(photoBuffer, x + 8, y + 8, { fit: [w - 16, h - 16], align: 'center', valign: 'center' });
   } else {
     doc.rect(x + 8, y + 8, w - 16, h - 16).fill(palette[1]);
     doc.fontSize(12).fillColor(palette[2]).text('Recipient Photo', x + 18, y + h / 2 - 8, { width: w - 36, align: 'center' });
@@ -311,7 +321,8 @@ async function createCoverPdf(order, luluDimensions = null) {
   const basePhotoH = panelH * 0.36 * settings.photoScale;
   const photoX = frontX + (settings.photoX / 100) * backW - basePhotoW / 2;
   const photoY = panelY + (settings.photoY / 100) * panelH - basePhotoH / 2;
-  drawPhoto(doc, photoPathFromOrder(order), photoX, photoY, basePhotoW, basePhotoH, palette);
+  const photoBuffer = await toJpegBuffer(photoPathFromOrder(order));
+  drawPhoto(doc, photoBuffer, photoX, photoY, basePhotoW, basePhotoH, palette);
 
   // Front title with customer controls.
   const titleBoxW = backW * 0.78;

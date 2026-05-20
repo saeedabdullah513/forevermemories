@@ -356,19 +356,19 @@ function validateStep(step) {
     }
   }
 
-  // Step 7 (data-step="6") — Final book title must be filled
-  if (step === 6) {
-    const titleEl = document.getElementById('editableTitle');
-    if (!titleEl || !titleEl.value.trim()) {
-      showToast('Please enter the final book title before continuing.', 'error');
-      return false;
-    }
-  }
+  // Step 7 (data-step="6") — pass through; createOrder handles TOC generation if needed
 
   return true;
 }
 
-nextBtn.addEventListener('click', () => { if (validateStep(currentStep)) setStep(currentStep + 1); });
+nextBtn.addEventListener('click', async () => {
+  if (!validateStep(currentStep)) return;
+  if (currentStep === 5 && !currentToc) {
+    tocStatus.textContent = 'Generating your table of contents, please wait…';
+    await generateToc(false).catch(e => { tocStatus.textContent = e.message; });
+  }
+  setStep(currentStep + 1);
+});
 backBtn.addEventListener('click', () => setStep(currentStep - 1));
 generateBtn.addEventListener('click', () => generateToc(true).catch(e => tocStatus.textContent = e.message));
 regenerateTocBtn.addEventListener('click', () => generateToc(true).catch(e => tocStatus.textContent = e.message));
